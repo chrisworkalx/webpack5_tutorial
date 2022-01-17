@@ -1,0 +1,27 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  // "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+  "plugins": [
+    "@typescript-eslint"
+    // "no-loops" //自定义插件使用
+  ],
+  "extends": [
+    //需要校验使用的规则
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+    // "plugin:shopify/esnext" //因为ESLint有成百上千条规则，假设你不想一条一条去配置，我们可以引入别人配置好的配置。下面我们来引入 Shopify's的配置。
+  ],
+  "rules": {
+    //0 | off -> 无校验 1-> warning  2-> error
+    "no-console": 0 
+    // "no-loops/no-loops": 2 // 增加no-loops规则
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "typescript-eslint-project",
+  "version": "1.0.0",
+  "description": "",
+  "private": "true",
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "lint:add": "eslint --fix --ext .js,.ts,jsx,tsx ./src",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "prettier --write",
+      "npm run lint:add",
+      "git add"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.2",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-shopify": "^35.1.0",
+    "eslint-plugin-vue": "^8.3.0",
+    "lint-staged": "^12.1.7",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3",
+    "husky": "^7.0.0"
+  }
+}

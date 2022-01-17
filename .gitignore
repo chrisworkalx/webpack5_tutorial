@@ -1,1 +1,10 @@
-node_modules
+/node_modules
+/yarn-error.log
+/yarn.lock
+yarn.lock
+/tsconfig-backup.json
+/package-lock.json
+/scripts/dll
+.DS_Store
+.stylelintcache
+/.idea

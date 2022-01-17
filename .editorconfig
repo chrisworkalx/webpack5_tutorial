@@ -1,0 +1,14 @@
+charset = utf-8
+# 需要匹配的文件
+[*.{js,jsx,ts,tsx,vue}]
+# 锁进类型 tab ｜｜ space
+indent_style = tab
+# 缩进设置为4
+indent_size = 4
+# 换行符格式。说明见Wiki：换行。可选值
+end_of_line = lf
+# 是否删除行尾的空格。可选值
+trim_trailing_whitespace = true
+# 是否在文件的最后插入一个空行
+insert_final_newline = true
+max_line_length = 100
