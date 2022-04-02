@@ -1,12 +1,12 @@
-console.log('my typescript eslint project')
+console.log('my typescript eslint project');
 
 for (let i = 0; i < 10; i++) {
-  console.log(i)
-  console.log(2222)
+  console.log(i);
+  console.log(2222);
 }
 
-let s
+let s;
 
 function alert() {
-  alert(1234)
+  alert(1234);
 }
