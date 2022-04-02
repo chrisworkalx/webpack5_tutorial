@@ -8,5 +8,5 @@ for (let i = 0; i < 10; i++) {
 let s
 
 function alert() {
-  alert(123)
+  alert(1234)
 }
