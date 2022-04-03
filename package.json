@@ -9,7 +9,7 @@
     "lint:add": "eslint --fix --ext .js,.ts,jsx,tsx ./src",
     "prepare": "husky install",
     "commit": "git-cz",
-    "release": "stand-version"
+    "release": "standard-version"
   },
   "keywords": [],
   "lint-staged": {
