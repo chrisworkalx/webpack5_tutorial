@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/chrisworkalx/husky_prettier/compare/v1.0.0...v1.0.1) (2022-04-03)
+
+
+### Bug Fixes
+
+* **master:** 清除issue 1 ([78afb44](https://github.com/chrisworkalx/husky_prettier/commit/78afb44e9cfe06862ed209b9ea6083ea5482aff2)), closes [#1](https://github.com/chrisworkalx/husky_prettier/issues/1)
+
 ## 1.0.0 (2022-04-03)
 
 
