@@ -9,5 +9,4 @@ let s;
 
 function alert() {
   alert(1234);
-  console.log('hello');
 }
