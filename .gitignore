@@ -3,7 +3,7 @@
 /yarn.lock
 yarn.lock
 /tsconfig-backup.json
-/package-lock.json
+#/package-lock.json
 /scripts/dll
 .DS_Store
 .stylelintcache
