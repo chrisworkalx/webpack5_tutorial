@@ -8,6 +8,7 @@ import myNotes from '../src/assets/file/note.xml';
 import myJson5 from '../src/assets/file/test03.json5';
 import _ from 'lodash';
 import './async-module.js';
+import './test.js';
 
 function createImgLabel(src) {
   const img = document.createElement('img');
@@ -76,3 +77,22 @@ console.log(myJson5, '==myJson5');
 console.log(Array.from([1, 2], x => x * 2));
 
 console.log(_.join(['what', 'else'], '-'));
+
+const addDivBtn = createButton('点击增加div', 'btn2');
+console.log(addDivBtn, ']==addDivBtn');
+addDivBtn.addEventListener(
+  'click',
+  () => {
+    const div = document.createElement('div');
+    div.classList.add('square');
+    document.body.appendChild(div);
+  },
+  false
+);
+
+if (module.hot) {
+  console.log('hello ppppppp');
+  module.hot.accept('./test.js', () => {
+    /**/
+  });
+}

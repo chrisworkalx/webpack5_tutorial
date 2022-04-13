@@ -2,7 +2,6 @@ const {
 	resolve
 } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //抽离css
 const json5 = require('json5');
 module.exports = {
 	entry: {
@@ -63,11 +62,6 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.(css|less)$/,
-				// use: ['style-loader', 'css-loader','less-loader']
-				use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
-			},
-			{
 				//加载csv或者tsv文件
 				test: /\.(csv|tsv)$/,
 				use: 'csv-loader'
@@ -100,13 +94,10 @@ module.exports = {
 				//删除空格与换行符
 				collapseWhitespace: true
 			}
-		}),
-		new MiniCssExtractPlugin({
-			//在单独的css文件中保存css文件
-			filename: 'css/[name][contenthash].css'
 		})
 	],
 	optimization: {
+		runtimeChunk: 'single', //webpack5 配置dev环境热交换，热重载有效
 		splitChunks: {
 			cacheGroups: {
 				//缓存组 可以在浏览器中不会一直被重复请求，保证浏览器命中缓存
