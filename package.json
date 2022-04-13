@@ -9,7 +9,14 @@
     "lint:add": "eslint --fix --ext .js,.ts,jsx,tsx ./src",
     "prepare": "husky install",
     "commit": "git-cz",
-    "release": "standard-version"
+    "release": "standard-version",
+    "test:start": "webpack serve",
+    "test:optimization:entry": "webpack serve --config webpack.config.entry.js",
+    "test:optimizationBuild:entry": "webpack --config webpack.config.entry.js",
+    "test:build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack serve --config ./config/webpack.config.js --env development",
+    "build": "webpack --config ./config/webpack.config.js --env production"
   },
   "keywords": [],
   "lint-staged": {
@@ -27,12 +34,21 @@
   "author": "chrisworkalx",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "7.17.9",
+    "@babel/plugin-transform-runtime": "7.17.0",
+    "@babel/preset-env": "7.16.11",
+    "@babel/runtime": "7.17.9",
     "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "8.2.4",
     "commitizen": "^4.2.4",
+    "copy-webpack-plugin": "10.2.4",
+    "css-loader": "6.7.1",
+    "css-minimizer-webpack-plugin": "3.4.1",
+    "csv-loader": "3.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.4",
@@ -40,10 +56,25 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-shopify": "^35.1.0",
     "eslint-plugin-vue": "^8.3.0",
+    "html-webpack-plugin": "5.5.0",
     "husky": "^7.0.0",
+    "json5": "2.2.1",
+    "less": "4.1.2",
+    "less-loader": "10.2.0",
     "lint-staged": "^11.0.0",
+    "mini-css-extract-plugin": "2.6.0",
     "prettier": "^2.5.1",
     "standard-version": "^9.3.2",
-    "typescript": "^4.4.3"
+    "style-loader": "3.3.1",
+    "terser-webpack-plugin": "5.3.1",
+    "typescript": "^4.4.3",
+    "webpack": "5.72.0",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "4.8.1",
+    "webpack-merge": "5.8.0",
+    "xml-loader": "1.2.1"
+  },
+  "dependencies": {
+    "lodash": "4.17.21"
   }
 }
