@@ -1,0 +1,28 @@
+@font-face {
+  /* 定义字体库名字 后面好用 */
+  font-family: 'iconfont';
+  /* 这是个二进制trueType文件 */
+  src: url('../font/iconfont.ttf') format('trueType'); 
+}
+
+@base-color: #f40;
+
+body {
+  img {
+    width: 200px;
+    border: solid @base-color 10px;
+    box-shadow: 0 0 10px #f99;
+    display: flex;
+  }
+  .square {
+    background: red;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+  .icon {
+    /* 使用上面的字体库名字 */
+    font-family: 'iconfont';
+    font-size: 60px;
+  }
+}

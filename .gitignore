@@ -1,4 +1,3 @@
-/node_modules
 /yarn-error.log
 /yarn.lock
 yarn.lock
@@ -8,3 +7,5 @@ yarn.lock
 .DS_Store
 .stylelintcache
 /.idea
+**/node_modules
+dist

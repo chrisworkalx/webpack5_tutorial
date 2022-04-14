@@ -15,11 +15,25 @@ module.exports = {
     rules: [
       {
         test: /\.(css|less)$/,
-        use: ['style-loader', 'css-loader', 'less-loader'],
+        use: ['style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                // auto: (resourcePath) => resourcePath.endsWith('.less'),  // 匹配.less文件来进行css模块化。
+                auto: (resourcePath) => !resourcePath.includes('global'), // 匹配不包含global字符串的文件来进行css模块化。
+                localIdentName: '[local]_[hash:base64:10]',
+              },
+            },
+          },
+          'less-loader',
+          'postcss-loader',
+        ],
       },
     ],
   },
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
     hot: true, // 开启模块热替换 默认是开启的
     liveReload: true, // 默认都是开启的

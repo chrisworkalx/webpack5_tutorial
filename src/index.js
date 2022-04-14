@@ -3,12 +3,14 @@ import nullSrc from './assets/imgs/null.png';
 import qiyeSrc from './assets/imgs/qiye.svg';
 import textSrc from './assets/file/test.txt';
 import jsSrc from './assets/imgs/js.jpeg';
-import './assets/style/index.css';
 import myCsv from './assets/file/test02.csv';
 import myNotes from './assets/file/note.xml';
 import myJson5 from './assets/file/test03.json5';
 import './async-module.js';
 import './test.js';
+import $ from 'jquery';
+import './assets/style/app.global.css';
+import cssStyles from './assets/style/css_module.css';
 
 function createImgLabel(src) {
   const img = document.createElement('img');
@@ -56,7 +58,7 @@ addButton.addEventListener(
     /* 魔法注释webpackChunkName: 'addFromMath' 定义这个懒加载模块的名字 */
     // webpackPrefetch: true 定义这个模块是预加载模块会在浏览器空闲的时候加载资源 很优秀
     import(
-      /* webpackChunkName: 'addFromMath', webpackPrefetch: true */ './math.js'
+      /* webpackChunkName: 'addFromMath', webpackPrefetch: true */ './math'
     ).then(({ add }) => {
       console.log(add(3, 6));
     });
@@ -90,9 +92,30 @@ addDivBtn.addEventListener(
   false,
 );
 
+console.log($, '====$');
+
+const textDiv = document.createElement('div');
+textDiv.classList.add(cssStyles.box);
+textDiv.innerHTML = 'hello css module';
+document.body.appendChild(textDiv);
+
 if (module.hot) {
   console.log('hello ppppppp');
   module.hot.accept('./test.js', () => {
     /**/
+  });
+}
+
+// 检测浏览器是否支持service-worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then((registration) => {
+        console.log(`SW:注册成功${registration}`);
+      })
+      .catch((registrationError) => {
+        console.log(`SW:注册失败${registrationError}`);
+      });
   });
 }
