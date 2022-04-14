@@ -14,5 +14,5 @@
  * revert：回滚某个更早之前的提交
  */
 module.exports = {
-  extends: ['@commitlint/config-conventional']
+  extends: ['@commitlint/config-conventional'],
 };

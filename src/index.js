@@ -1,12 +1,12 @@
-import nullSrc from '../src/assets/imgs/null.png';
-import qiyeSrc from '../src/assets/imgs/qiye.svg';
-import textSrc from '../src/assets/file/test.txt';
-import jsSrc from '../src/assets/imgs/js.jpeg';
-import '../src/assets/style/index.css';
-import myCsv from '../src/assets/file/test02.csv';
-import myNotes from '../src/assets/file/note.xml';
-import myJson5 from '../src/assets/file/test03.json5';
 import _ from 'lodash';
+import nullSrc from './assets/imgs/null.png';
+import qiyeSrc from './assets/imgs/qiye.svg';
+import textSrc from './assets/file/test.txt';
+import jsSrc from './assets/imgs/js.jpeg';
+import './assets/style/index.css';
+import myCsv from './assets/file/test02.csv';
+import myNotes from './assets/file/note.xml';
+import myJson5 from './assets/file/test03.json5';
 import './async-module.js';
 import './test.js';
 
@@ -18,7 +18,7 @@ function createImgLabel(src) {
 
 function createTextLable(
   resource,
-  cssText = 'background: #f99; width: 200px; height: 200px;'
+  cssText = 'background: #f99; width: 200px; height: 200px;',
 ) {
   const div = document.createElement('div');
   div.textContent = resource;
@@ -52,29 +52,29 @@ const addButton = createButton('点击加法', 'btn1');
 addButton.addEventListener(
   'click',
   () => {
-    //这里就是相当于懒加载，只有执行点击事件的时候才会从浏览器请求资源
-    /* 魔法注释webpackChunkName: 'addFromMath' 定义这个懒加载模块的名字*/
-    //webpackPrefetch: true 定义这个模块是预加载模块会在浏览器空闲的时候加载资源 很优秀
+    // 这里就是相当于懒加载，只有执行点击事件的时候才会从浏览器请求资源
+    /* 魔法注释webpackChunkName: 'addFromMath' 定义这个懒加载模块的名字 */
+    // webpackPrefetch: true 定义这个模块是预加载模块会在浏览器空闲的时候加载资源 很优秀
     import(
-      /* webpackChunkName: 'addFromMath', webpackPrefetch: true */ './math'
+      /* webpackChunkName: 'addFromMath', webpackPrefetch: true */ './math.js'
     ).then(({ add }) => {
       console.log(add(3, 6));
     });
 
-    //webpackPreload: true跟懒加载类似 都是在网页执行操作的时候加载
+    // webpackPreload: true跟懒加载类似 都是在网页执行操作的时候加载
     // import(/* webpackChunkName: 'addFromMath', webpackPreload: true */'./math').then(({add}) => {
-    // 	console.log(add(3,6));
+    // console.log(add(3,6));
     // })
   },
-  false
+  false,
 );
 
 console.log(myNotes, '====myXml');
 console.log(myCsv, '----myCsv');
 console.log(myJson5, '==myJson5');
 
-//这种代码如果在低版本的浏览器就会报错，所以我们需要转化es6代码
-console.log(Array.from([1, 2], x => x * 2));
+// 这种代码如果在低版本的浏览器就会报错，所以我们需要转化es6代码
+console.log(Array.from([1, 2], (x) => x * 2));
 
 console.log(_.join(['what', 'else'], '-'));
 
@@ -87,7 +87,7 @@ addDivBtn.addEventListener(
     div.classList.add('square');
     document.body.appendChild(div);
   },
-  false
+  false,
 );
 
 if (module.hot) {

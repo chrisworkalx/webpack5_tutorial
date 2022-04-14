@@ -5,8 +5,7 @@
   "private": "true",
   "scripts": {
     "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
-    "lint:add": "eslint --fix --ext .js,.ts,jsx,tsx ./src",
+    "lint:fix": "eslint --fix --ext .js,.ts,jsx,tsx ./src",
     "prepare": "husky install",
     "commit": "git-cz",
     "release": "standard-version",
@@ -22,7 +21,7 @@
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
       "prettier --write",
-      "npm run lint:add",
+      "npm run lint:fix",
       "git add"
     ]
   },
@@ -40,9 +39,6 @@
     "@babel/runtime": "7.17.9",
     "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^16.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.31.0",
-    "@typescript-eslint/parser": "^4.31.0",
-    "babel-eslint": "^10.1.0",
     "babel-loader": "8.2.4",
     "commitizen": "^4.2.4",
     "copy-webpack-plugin": "10.2.4",
@@ -50,12 +46,9 @@
     "css-minimizer-webpack-plugin": "3.4.1",
     "csv-loader": "3.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-no-loops": "^0.3.0",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-shopify": "^35.1.0",
-    "eslint-plugin-vue": "^8.3.0",
+    "eslint": "8.13.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.26.0",
     "html-webpack-plugin": "5.5.0",
     "husky": "^7.0.0",
     "json5": "2.2.1",

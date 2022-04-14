@@ -7,6 +7,6 @@ function getComponent() {
   });
 }
 
-getComponent().then(com => {
+getComponent().then((com) => {
   document.body.appendChild(com);
 });
