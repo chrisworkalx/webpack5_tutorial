@@ -1,10 +1,12 @@
-# 如何在TypeScript项目中使用ESLint?
+# 搭建基于webpack5的开发web环境
 
 
-## 运行Lint
+## 启动项目
 
 ```bash
-npm run lint
+- npm install
+- 或者yarn
 # 自动修复
-npm run lint:fix
+- npm start
+- 或者yarn start
 ```
